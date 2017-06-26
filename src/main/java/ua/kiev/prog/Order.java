@@ -104,7 +104,7 @@ public class Order {
         try {
             for (int i = 0; i < numArr.length; i++) {
                 Menu menu = em.find(Menu.class,numArr[i]);
-                if (weight<=1000){
+                if ((weight+menu.getMass())<=1000){
                     weight+=menu.getMass();
                     order.add(menu);
                 } else {
